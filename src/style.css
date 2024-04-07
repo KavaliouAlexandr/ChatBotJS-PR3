@@ -10,6 +10,31 @@ body {
     background-color: rgb(234, 239, 255);
 }
 
+.chatbot-toggler {
+    position: fixed;
+    right: 40px;
+    bottom: 35px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgb(140, 39, 255);
+    color: white;
+    border:none;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+
+.chatbot-toggler span {
+    position: absolute;
+}
+
+.chatbot-toggler span:last-child {
+    opacity: 0;
+}
+
 .chatbot {
     position: fixed;
     right: 40px;
