@@ -35,6 +35,7 @@ body {
 .chatbot .chatbox {
     height: 400px;
     overflow-y: auto;
+    padding-top: 10px;
 }
 
 .chatbox .chat {
@@ -53,11 +54,40 @@ body {
     font-size: 1rem;
     padding: 12px 16px;
     border-radius: 10px 10px 0 10px;
-    background: rgb(140, 39, 255);;
+    background: rgb(140, 39, 255);
 }
 
 .chatbox .income p {
     color: black;
     background: rgb(214, 214, 214);
+}
+
+.chatbox .income span {
+    width: 32px;
+    height: 32px;
+    align-self: flex-end;
+    color: white;
+    background: rgb(140, 39, 255); 
+    line-height: 32px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 7px 2px 0;
+}
+
+.chatbot .input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    padding: 5px 20px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbot .input textarea {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    resize: none;
+    padding: 15px 15px 15px 0;
 }
 
