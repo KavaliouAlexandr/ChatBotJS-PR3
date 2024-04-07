@@ -125,7 +125,7 @@ body {
     margin: 0 7px 2px 0;
 }
 
-.chatbot .input {
+.chatbot .chat-input {
     position: absolute;
     display: flex;
     bottom: 0;
@@ -135,7 +135,7 @@ body {
     border-top: 1px solid #ccc;
 }
 
-.chatbot .input textarea {
+.chat-input textarea {
     height: 55px;
     width: 100%;
     border: none;
@@ -146,7 +146,7 @@ body {
     
 }
 
-.chatbot .input span {
+.chat-input span {
     color: rgb(140, 39, 255);
     align-self: center;
     cursor: pointer;
