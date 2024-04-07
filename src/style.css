@@ -76,6 +76,7 @@ body {
 
 .chatbot .input {
     position: absolute;
+    display: flex;
     bottom: 0;
     width: 100%;
     background: white;
@@ -84,10 +85,24 @@ body {
 }
 
 .chatbot .input textarea {
+    height: 55px;
+    width: 100%;
     border: none;
     outline: none;
     font-size: 1rem;
     resize: none;
     padding: 15px 15px 15px 0;
+    
+}
+
+.chatbot .input span {
+    color: rgb(140, 39, 255);
+    align-self: center;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.chatbot textarea:valid ~span {
+    visibility: visible;
 }
 
