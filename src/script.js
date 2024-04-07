@@ -8,7 +8,7 @@ let userMessage;
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className);
-    let chatContent = className === "outcome" ? `<p>${message}</p>` : `<span class="material-symbols-outlined">smart_toy</pan><p>${message}</p>`;
+    let chatContent = className === "outcome" ? `<p>${message}</p>` : `<span class="material-symbols-outlined">smart_toy</span><p>${message}</p>`;
     chatLi.innerHTML = chatContent;
     return chatLi;
 }
