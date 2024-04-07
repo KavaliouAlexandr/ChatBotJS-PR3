@@ -30,9 +30,13 @@ body {
 .chatbot-toggler span {
     position: absolute;
 }
-
+.show-chatbot .chatbot-toggler span:first-child, 
 .chatbot-toggler span:last-child {
     opacity: 0;
+}
+
+.show-chatbot .chatbot-toggler span:last-child {
+    opacity: 1;
 }
 
 .chatbot {
@@ -43,18 +47,40 @@ body {
     overflow: hidden;
     border-radius: 15px;
     background-color: white;
-
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
     box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
     0 32px 64px -48px rgba(0,0,0,0.5);;
 }
 
-.chatbot h2 {
+.show-chatbot .chatbot {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chatbot header {
     background-color:rgb(140, 39, 255);
     padding: 15px 0 ;
     text-align: center;
     border-radius: 15px;
     color: white;
+    position: relative;
+    
+}
+
+.chatbot header h2 {
     font-size: 1.4rem;
+}
+
+.chatbot header span {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    display: none;
 }
 
 .chatbot .chatbox {
@@ -131,3 +157,18 @@ body {
     visibility: visible;
 }
 
+@media (max-width: 500px) {
+    .chatbot {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    .chatbot .chatbox {
+        height: 90%;
+    }
+    .chatbot header span {
+        display: flex;
+    }
+}
