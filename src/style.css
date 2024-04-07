@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgb(182, 252, 229);
+    background-color: rgb(234, 239, 255);
 }
 
 .chatbot {
@@ -24,8 +24,16 @@ body {
 }
 
 .chatbot h2 {
-    background-color:rgb(104, 253, 253);
+    background-color:rgb(140, 39, 255);
     padding: 15px 0 ;
     text-align: center;
     border-radius: 15px;
+    color: white;
+    font-size: 1.4rem;
 }
+
+.chatbot .chatbox {
+    height: 400px;
+    overflow-y: auto;
+}
+
