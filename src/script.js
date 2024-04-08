@@ -4,7 +4,7 @@ const chatbox = document.querySelector(".chatbox");
 
 
 let userMessage;
-const API_KEY = "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";
+const API_KEY = "";
 
 
 const generateResponse = (incomingChatLi) => {
