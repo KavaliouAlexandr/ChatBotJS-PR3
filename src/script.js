@@ -4,6 +4,30 @@ const chatbox = document.querySelector(".chatbox");
 
 
 let userMessage;
+const API_KEY = "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";
+
+
+const generateResponse = (incomingChatLi) => {
+    const API_URL = "https://api.openai.com/v1/chat/completions";
+    const messageElement = incomingChatLi.querySelector("p");
+
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json",
+            "Authorization" : `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{role: "user", content: userMessage}]
+        })
+    }
+    fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+        messageElement.textContent = data.choices[0].message.content;
+    }).catch((error) => {
+        messageElement.textContent = "Error:(";
+    })
+}
 
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
@@ -21,7 +45,9 @@ const handleChat = () => {
     chatbox.appendChild(createChatLi(userMessage, "outcome"));
 
     setTimeout(() => {
-        chatbox.appendChild(createChatLi("Typing..", "incoming"));
+        const incomingChatLi = createChatLi("Typing..", "incoming")
+        chatbox.appendChild(incomingChatLi);
+        generateResponse(incomingChatLi);
     },600);
 }
 sendChatBtn.addEventListener("click", handleChat);
