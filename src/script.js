@@ -26,7 +26,7 @@ const generateResponse = (incomingChatLi) => {
         messageElement.textContent = data.choices[0].message.content;
     }).catch((error) => {
         messageElement.textContent = "Error:(";
-    })
+    }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }
 
 const createChatLi = (message, className) => {
@@ -43,10 +43,12 @@ const handleChat = () => {
     if(!userMessage) return;
 
     chatbox.appendChild(createChatLi(userMessage, "outcome"));
+    chatbox.scrollTo(0, chatbox.scrollHeight);
 
     setTimeout(() => {
         const incomingChatLi = createChatLi("Typing..", "incoming")
         chatbox.appendChild(incomingChatLi);
+        chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
     },600);
 }
