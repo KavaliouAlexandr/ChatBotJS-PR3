@@ -28,7 +28,7 @@ const generateResponse = (incomingChatLi) => {
     fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
         messageElement.textContent = data.choices[0].message.content;
     }).catch((error) => {
-        messageElement.textContent = "Error:(";
+        messageElement.textContent = "Error:( Something went wrong. Please try again.";
     }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }
 
